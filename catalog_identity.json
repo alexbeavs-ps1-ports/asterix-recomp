@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Asterix",
+    "id": "SLES-01416",
+    "boot_exe": "SLES_014.16"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Asterix (Europe) (En,Fr,Nl) (Rev 1).cue",
+    "bin_name": "Asterix (Europe) (En,Fr,Nl) (Rev 1).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 733092528,
+      "md5": "843f6c621bb263b2e45394ea16dbf752",
+      "sha1": "ddc37f5e1e3e835b4bbcacffb8f1943410d1ec1e",
+      "crc32": "83614ee0"
+    },
+    "disc_fp": "75d3407d8487596ceb2a40d22223ebc705936d001d442a58710698505e1c7ca7"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8006B740",
+    "text_size": "0x00078000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 818,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

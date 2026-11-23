@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Asterix"
+id = "SLES-01416"
+players = 1
+exe = "disc/SLES_014.16"
+disc = "disc/Asterix (Europe) (En,Fr,Nl) (Rev 1).cue"
+discs = ["disc/Asterix (Europe) (En,Fr,Nl) (Rev 1).cue"]
+disc_serials = ["SLES-01416"]
+load_address = "0x80010000"
+entry_pc = "0x8006B740"
+text_size = "0x00078000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Asterix (Europe) (En,Fr,Nl) (Rev 1).bin"
+cue_name = "Asterix (Europe) (En,Fr,Nl) (Rev 1).cue"
+boot_exe = "SLES_014.16"
+known_sizes = [733092528]
+known_md5 = [
+  "843f6c621bb263b2e45394ea16dbf752",
+]
+known_sha1 = [
+  "ddc37f5e1e3e835b4bbcacffb8f1943410d1ec1e",
+]
+known_crc32 = [
+  "83614ee0",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Asterix Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "75d3407d8487596ceb2a40d22223ebc705936d001d442a58710698505e1c7ca7"
